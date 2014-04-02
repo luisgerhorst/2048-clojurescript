@@ -104,17 +104,6 @@
           (move grid :top)
           (move grid :bottom))))
 
-;; Pure Grid test funcions.
-
-(defn random-block
-  [grid]
-  (loop [g grid
-         i 0]
-        (let [moved (move g (rand-nth [:left :right :top :bottom]))]
-          (if (or (not moved) (= i 500))
-            g
-            (recur moved (inc i))))))
-
 ;; Pure app state functions.
 
 (defn app-state-reset
